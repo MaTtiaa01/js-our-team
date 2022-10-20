@@ -61,7 +61,7 @@ for (let i = 0; i < ourTeam.length; i++) {
     //console.log(member.name);
     //console.log(member.role);
     //console.log(member.image);
-    const imgMarkup = `<img scr="./assets/img/${member.image}"  alt=""> `
+    const imgMarkup = `<img src="./assets/img/${member.image}"  alt=""> `
     console.log(imgMarkup);
     const cardMarkup = `<div class="col">
     <div >${imgMarkup}</div> 
