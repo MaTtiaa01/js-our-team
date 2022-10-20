@@ -6,9 +6,16 @@ MILESTONE 1: Stampare su console le informazioni di nome, ruolo e la stringa del
 
 
 MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
+    -pick a dom element with querySelector
+    -add the element p with js
+        -use createElement and insertAdjacentElement
+
 BONUS 1: Trasformare la stringa foto in una immagine effettiva
 BONUS 2: Organizzare i singoli membri in card/schede
 */
+
+const constainerEl = document.querySelector(".container")
+let cardMarkup;
 
 const ourTeam = [
     {
@@ -50,4 +57,7 @@ for (let i = 0; i < ourTeam.length; i++) {
     console.log(member.name);
     console.log(member.role);
     console.log(member.image);
+    // cardMarkup = document.createElement("div")
+    // constainerEl.insertAdjacentElement("beforeend", cardMarkup);
+    constainerEl.innerHTML += member.name + member.role + member.image;
 }
