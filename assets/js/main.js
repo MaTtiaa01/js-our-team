@@ -11,11 +11,15 @@ MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
         -use createElement and insertAdjacentElement
 
 BONUS 1: Trasformare la stringa foto in una immagine effettiva
+    -create a const with the img markup
+    -create a const with the card markup
+    -insert the card markup in the containerEl
+
 BONUS 2: Organizzare i singoli membri in card/schede
 */
 
-const constainerEl = document.querySelector(".container")
-let cardMarkup;
+const rowEl = document.querySelector(".row")
+
 
 const ourTeam = [
     {
@@ -53,11 +57,21 @@ const ourTeam = [
 
 for (let i = 0; i < ourTeam.length; i++) {
     const member = ourTeam[i];
-    console.log(member);
-    console.log(member.name);
-    console.log(member.role);
-    console.log(member.image);
-    // cardMarkup = document.createElement("div")
-    // constainerEl.insertAdjacentElement("beforeend", cardMarkup);
-    constainerEl.innerHTML += member.name + member.role + member.image;
+    //console.log(member);
+    //console.log(member.name);
+    //console.log(member.role);
+    //console.log(member.image);
+    const imgMarkup = `<img scr="./assets/img/${member.image}"  alt=""> `
+    console.log(imgMarkup);
+    const cardMarkup = `<div class="col">
+    <div >${imgMarkup}</div> 
+    <div class="member_name ">${member.name} </div>
+    <div class="member_role ">${member.role}</div>
+    </div>`
+    console.log(cardMarkup);
+    rowEl.innerHTML += cardMarkup;
+    
+    //constainerEl.innerHTML += member.name + member.role + member.image;
 }
+
+
